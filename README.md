@@ -32,6 +32,7 @@ Or install it yourself as:
 
 OpenDataAddresses.address('SF') #=> 1955 Leavenworth St 12,San Francisco,CA,94133
 
+# Defaults to 10 addresses
 # Addresses are guaranteed to be unique
 OpenDataAddresses.addresses(2, 'SF') #=> ["1455 Market St,San Francisco,CA,94103", "840 Post St,San Francisco,CA,94109"]
 ```

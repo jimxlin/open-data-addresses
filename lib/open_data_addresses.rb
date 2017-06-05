@@ -17,7 +17,7 @@ module OpenDataAddresses
     address
   end
 
-  def self.addresses(amount, city='SF')
+  def self.addresses(amount=10, city='SF')
     addresses = []
     csv = get_csv(city)
     address_lines = uniq_rand_nums(amount, 2, csv[:lines]).sort
