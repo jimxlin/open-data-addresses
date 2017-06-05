@@ -40,8 +40,8 @@ module OpenDataAddresses
 
   def self.get_csv(city)
     files = {
-      'SF'  => 'lib/addresses/sanfrancisco_registered_business_locations.csv',
-      'NYC' => 'lib/addresses/newyorkcity_legally_operating_businesses.csv'
+      'SF'  => "#{File.dirname(__FILE__)}/addresses/sanfrancisco_registered_business_locations.csv",
+      'NYC' => "#{File.dirname(__FILE__)}/addresses/newyorkcity_legally_operating_businesses.csv"
     }
     lines = File.open(files[city], &:readline).to_i;
 
