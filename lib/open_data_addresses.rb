@@ -45,7 +45,7 @@ module OpenDataAddresses
     }
     lines = File.open(files[city], &:readline).to_i;
 
-    {file: files[city], lines: lines}
+    { file: files[city], lines: lines }
   end
 
   def self.uniq_rand_nums(amount, min, max)

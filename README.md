@@ -1,8 +1,11 @@
-# OpenDataAddresses
+# Open Data Addresses
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/open_data_addresses`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a generator for real addresses, meant to be used for developing and testing applications that require them, such as geocoding. Data is taken from various U.S. government open data websites, more information [here](https://www.data.gov/open-gov/).
 
-TODO: Delete this and the text above, and describe your gem
+Data sets used:
+
+[San Francisco](https://datasf.org/): Registered Business Locations  
+[New York City](https://opendata.cityofnewyork.us/): Legally Operating Businesses
 
 ## Installation
 
@@ -22,20 +25,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Two cities are currently supported:
+#   'SF'  => San Francisco (default city argument)
+#   'NYC' => New York City
 
-## Development
+OpenDataAddresses.address('SF') #=> 1955 Leavenworth St 12,San Francisco,CA,94133
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/open_data_addresses. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+# Addresses are guaranteed to be unique
+OpenDataAddresses.addresses(2, 'SF') #=> ["1455 Market St,San Francisco,CA,94103", "840 Post St,San Francisco,CA,94109"]
+```
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

@@ -12,7 +12,7 @@ RSpec.describe OpenDataAddresses do
   describe '::address' do
     it 'returns a random address' do
       cities.each do |city|
-        address = OpenDataAddresses::address(city)
+        address = OpenDataAddresses.address(city)
         expect(address).to match(address_regex)
       end
     end
@@ -21,7 +21,7 @@ RSpec.describe OpenDataAddresses do
   describe '::addresses' do
     it 'returns an array of addresses' do
       cities.each do |city|
-        addresses = OpenDataAddresses::addresses(amount, city)
+        addresses = OpenDataAddresses.addresses(amount, city)
         expect(addresses.length).to eq(amount)
         addresses.each {|address| expect(address).to match(address_regex)}
       end
