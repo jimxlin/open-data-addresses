@@ -30,11 +30,11 @@ Or install it yourself as:
 #   'SF'  => San Francisco (default city argument)
 #   'NYC' => New York City
 
-OpenDataAddresses.address('SF') #=> 1955 Leavenworth St 12,San Francisco,CA,94133
+OpenDataAddresses.address('SF') #=> { street: '1955 Leavenworth St', city: 'San Francisco', state: 'CA', zip: '94133' }
 
 # Defaults to 10 addresses
 # Addresses are guaranteed to be unique
-OpenDataAddresses.addresses(2, 'SF') #=> ["1455 Market St,San Francisco,CA,94103", "840 Post St,San Francisco,CA,94109"]
+OpenDataAddresses.addresses(2, 'SF') #=> [{ street: '1455 Market St', city: 'San Francisco', state: 'CA', zip: '94103' }, { street: '840 Post St', city: 'San Francisco', state: 'CA', zip: '94109' }]
 ```
 
 ## License

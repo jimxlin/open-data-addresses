@@ -6,14 +6,20 @@ RSpec.describe OpenDataAddresses do
   end
 
   let(:cities) { ['SF', 'NYC'] }
-  let(:address_regex) { /[\w\s]+,[A-Za-z\s]+,[A-Z][A-Z],\d\d\d\d\d/ }
+  let(:street_regex) { /[\w\s]+/ }
+  let(:city_regex) { /[A-Za-z\s]+/ }
+  let(:state_regex) { /[A-Z][A-Z]/ }
+  let(:zip_regex) { /\d\d\d\d\d/ }
   let(:amount) { 10 }
 
   describe '::address' do
     it 'returns a random address' do
       cities.each do |city|
         address = OpenDataAddresses.address(city)
-        expect(address).to match(address_regex)
+        expect(address[:street]).to match(street_regex)
+        expect(address[:city]).to match(city_regex)
+        expect(address[:state]).to match(state_regex)
+        expect(address[:zip]).to match(zip_regex)
       end
     end
   end
@@ -23,7 +29,12 @@ RSpec.describe OpenDataAddresses do
       cities.each do |city|
         addresses = OpenDataAddresses.addresses(amount, city)
         expect(addresses.length).to eq(amount)
-        addresses.each {|address| expect(address).to match(address_regex)}
+        addresses.each do |address|
+          expect(address[:street]).to match(street_regex)
+          expect(address[:city]).to match(city_regex)
+          expect(address[:state]).to match(state_regex)
+          expect(address[:zip]).to match(zip_regex)
+        end
       end
     end
   end

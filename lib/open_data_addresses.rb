@@ -14,7 +14,7 @@ module OpenDataAddresses
       break
     end
 
-    address
+    format_address(address)
   end
 
   def self.addresses(amount=10, city='SF')
@@ -33,10 +33,15 @@ module OpenDataAddresses
       break if addresses.length == amount
     end
 
-    addresses
+    addresses.map { |address| format_address(address) }
   end
 
   private
+
+  def self.format_address(string)
+    ary = string.split(',')
+    { street: ary[0], city: ary[1], state: ary[2], zip: ary[3] }
+  end
 
   def self.get_csv(city)
     files = {
