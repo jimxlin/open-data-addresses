@@ -26,8 +26,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# Two cities are currently supported:
-#   'SF'  => San Francisco (default city argument)
+# Two region are currently supported:
+#   'SF'  => San Francisco (default)
 #   'NYC' => New York City
 
 OpenDataAddresses.address('SF') #=> { street: '1955 Leavenworth St', city: 'San Francisco', state: 'CA', zip: '94133' }
