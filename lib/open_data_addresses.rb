@@ -46,7 +46,8 @@ module OpenDataAddresses
   def self.get_csv(region)
     files = {
       'SF'  => "#{File.dirname(__FILE__)}/addresses/sanfrancisco_registered_business_locations.csv",
-      'NYC' => "#{File.dirname(__FILE__)}/addresses/newyorkcity_legally_operating_businesses.csv"
+      'NYC' => "#{File.dirname(__FILE__)}/addresses/newyorkcity_legally_operating_businesses.csv",
+      'LA'  => "#{File.dirname(__FILE__)}/addresses/losangeles_listing_of_active_businesses.csv"
     }
     raise 'Invalid region argument' if files[region].nil?
     lines = File.open(files[region], &:readline).to_i;
