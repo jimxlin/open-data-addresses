@@ -5,7 +5,7 @@ RSpec.describe OpenDataAddresses do
     expect(OpenDataAddresses::VERSION).not_to be nil
   end
 
-  let(:regions) { ['SF', 'NYC'] }
+  let(:regions) { ['SF', 'NYC', 'LA'] }
   let(:street_regex) { /[\w\s]+/ }
   let(:city_regex) { /[A-Za-z\s]+/ }
   let(:state_regex) { /[A-Z][A-Z]/ }

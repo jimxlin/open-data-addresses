@@ -6,6 +6,7 @@ Data sets used:
 
 [San Francisco](https://datasf.org/): Registered Business Locations  
 [New York City](https://opendata.cityofnewyork.us/): Legally Operating Businesses
+[Los Angeles](https://data.lacity.org): Listing of Active Businesses
 
 ## Installation
 
@@ -26,9 +27,10 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# Two region are currently supported:
+# 3 region are currently supported:
 #   'SF'  => San Francisco (default)
 #   'NYC' => New York City
+#   'LA'  => Greater Los Angeles Area
 
 OpenDataAddresses.address('SF') #=> { street: '1955 Leavenworth St', city: 'San Francisco', state: 'CA', zip: '94133' }
 
